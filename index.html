@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Quest Pro</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Capital Quest Pro</h1>
+        </header>
+        <main>
+            <div id="game-container">
+                <div id="player-info" class="card">
+                    <input type="text" id="player-name" placeholder="Enter your name">
+                    <button id="start-game" class="btn btn-primary">Start Game</button>
+                </div>
+                <div id="game-area" class="card" style="display: none;">
+                    <div id="progress-bar"></div>
+                    <div id="country-info">
+                        <img id="flag" src="/placeholder.svg" alt="Country Flag">
+                        <h2 id="country-name"></h2>
+                    </div>
+                    <div id="options"></div>
+                    <div id="game-stats">
+                        <div id="timer" class="stat">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"></path></svg>
+                            <span id="time">15</span>s
+                        </div>
+                        <div id="score" class="stat">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                            <span id="current-score">0</span>
+                        </div>
+                        <div id="round" class="stat">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M6,16H18V18H6V16M6,12H18V14H6V12M6,8H18V10H6V8M20,4V20C20,21.11 19.11,22 18,22H6C4.89,22 4,21.11 4,20V4A2,2 0 0,1 6,2H18C19.11,2 20,2.9 20,4Z"></path></svg>
+                            <span id="current-round">1</span>/10
+                        </div>
+                    </div>
+                </div>
+                <div id="game-over" class="card" style="display: none;">
+                    <h2>Game Over</h2>
+                    <p id="final-score"></p>
+                    <p id="message"></p>
+                    <p id="best-score"></p>
+                    <p id="overall-best"></p>
+                    <button id="play-again" class="btn btn-primary">Play Again</button>
+                </div>
+            </div>
+            <button id="show-leaderboard" class="btn btn-secondary">Show Leaderboard</button>
+            <div id="leaderboard" class="card" style="display: none;">
+                <h2>Leaderboard</h2>
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-list"></tbody>
+                </table>
+                <button id="close-leaderboard" class="btn btn-secondary">Close Leaderboard</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
